@@ -36,9 +36,9 @@ namespace AuthServer
                     ClientName = "Angular SPA",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowedScopes = { "openid", "profile", "email", "api.read" },
-                    RedirectUris = {"http://localhost:4200/auth-callback"},
-                    PostLogoutRedirectUris = {"http://localhost:4200/"},
-                    AllowedCorsOrigins = {"http://localhost:4200"},
+                    RedirectUris = {"http://sso-auth-client.s3-website-ap-southeast-1.amazonaws.com//auth-callback"},
+                    PostLogoutRedirectUris = {"http://sso-auth-client.s3-website-ap-southeast-1.amazonaws.com//"},
+                    AllowedCorsOrigins = {"http://sso-auth-client.s3-website-ap-southeast-1.amazonaws.com/", "https://duycs-demo-net-core.herokuapp.com/"},
                     AllowAccessTokensViaBrowser = true,
                     AccessTokenLifetime = 3600
                 }
