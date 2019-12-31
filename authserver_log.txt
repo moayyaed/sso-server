@@ -4214,3 +4214,24 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
 2019-12-31 23:45:27.679 +07:00 [INF] Removing 0 grants
 2019-12-31 23:45:58.320 +07:00 [INF] Removing 0 grants
 2019-12-31 23:46:28.973 +07:00 [INF] Removing 0 grants
+2020-01-01 00:21:52.981 +07:00 [INF] Starting IdentityServer4 version 2.4.0.0
+2020-01-01 00:21:53.168 +07:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-01-01 00:21:53.169 +07:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-01-01 00:21:53.169 +07:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-01-01 00:21:53.169 +07:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-01-01 00:21:53.169 +07:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-01-01 00:21:53.169 +07:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-01-01 00:21:53.313 +07:00 [DBG] Starting grant removal
+2020-01-01 00:22:26.296 +07:00 [INF] Removing 0 grants
+2020-01-01 00:22:31.795 +07:00 [WRN] Failed to determine the https port for redirect.
+2020-01-01 00:22:31.814 +07:00 [DBG] Login Url: /Account/Login
+2020-01-01 00:22:31.814 +07:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-01-01 00:22:31.814 +07:00 [DBG] Logout Url: /Account/Logout
+2020-01-01 00:22:31.814 +07:00 [DBG] ConsentUrl Url: /consent
+2020-01-01 00:22:31.814 +07:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-01-01 00:22:31.814 +07:00 [DBG] Error Url: /home/error
+2020-01-01 00:22:31.814 +07:00 [DBG] Error Id Parameter: errorId
+2020-01-01 00:22:56.983 +07:00 [INF] Removing 0 grants
+2020-01-01 00:23:27.627 +07:00 [INF] Removing 0 grants
+2020-01-01 00:23:28.962 +07:00 [DBG] TaskCanceledException. Exiting.
+2020-01-01 00:23:28.981 +07:00 [DBG] Stopping grant removal
