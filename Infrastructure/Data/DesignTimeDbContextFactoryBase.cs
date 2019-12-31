@@ -53,7 +53,7 @@ namespace AuthServer.Infrastructure.Data
 
             Console.WriteLine("DesignTimeDbContextFactory.Create(string): Connection string: {0}", connectionString);
 
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseMySQL(connectionString);
 
             var options = optionsBuilder.Options;
             return CreateNewInstance(options);

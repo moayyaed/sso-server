@@ -23,28 +23,27 @@ namespace AuthServer.Infrastructure.Migrations.PersistedGrantDb
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.DeviceFlowCodes", b =>
                 {
-                    b.Property<string>("UserCode")
+                    b.Property<string>("UserCode").HasMaxLength(256)
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(200);
 
-                    b.Property<string>("ClientId")
+                    b.Property<string>("ClientId").HasMaxLength(256)
                         .IsRequired()
                         .HasMaxLength(200);
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<string>("Data")
+                    b.Property<string>("Data").HasMaxLength(256).HasColumnType("text")
                         .IsRequired()
                         .HasMaxLength(50000);
 
-                    b.Property<string>("DeviceCode")
-                        .IsRequired()
-                        .HasMaxLength(200);
+                    b.Property<string>("DeviceCode").HasMaxLength(256)
+                        .IsRequired();
 
                     b.Property<DateTime?>("Expiration")
                         .IsRequired();
 
-                    b.Property<string>("SubjectId")
+                    b.Property<string>("SubjectId").HasMaxLength(256)
                         .HasMaxLength(200);
 
                     b.HasKey("UserCode");
@@ -57,22 +56,22 @@ namespace AuthServer.Infrastructure.Migrations.PersistedGrantDb
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.PersistedGrant", b =>
                 {
-                    b.Property<string>("Key")
+                    b.Property<string>("Key").HasMaxLength(256)
                         .HasMaxLength(200);
 
-                    b.Property<string>("ClientId")
+                    b.Property<string>("ClientId").HasMaxLength(256)
                         .IsRequired()
                         .HasMaxLength(200);
 
                     b.Property<DateTime>("CreationTime");
 
-                    b.Property<string>("Data")
+                    b.Property<string>("Data").HasMaxLength(256).HasColumnType("text")
                         .IsRequired()
                         .HasMaxLength(50000);
 
                     b.Property<DateTime?>("Expiration");
 
-                    b.Property<string>("SubjectId")
+                    b.Property<string>("SubjectId").HasMaxLength(256)
                         .HasMaxLength(200);
 
                     b.Property<string>("Type")

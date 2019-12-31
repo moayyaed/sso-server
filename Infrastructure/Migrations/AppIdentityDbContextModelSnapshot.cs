@@ -21,42 +21,40 @@ namespace AuthServer.Infrastructure.Migrations
 
             modelBuilder.Entity("AuthServer.Infrastructure.Data.Identity.AppUser", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Id").HasMaxLength(256)
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("ConcurrencyStamp")
+                    b.Property<string>("ConcurrencyStamp").HasMaxLength(256).HasColumnType("text")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Email").HasMaxLength(256).HasColumnType("text")
                         .HasMaxLength(256);
 
-                    b.Property<bool>("EmailConfirmed");
+                    b.Property<bool>("EmailConfirmed").HasColumnType("tinyint(1)").HasConversion<int>();
 
-                    b.Property<bool>("LockoutEnabled");
+                    b.Property<bool>("LockoutEnabled").HasColumnType("tinyint(1)").HasConversion<int>();
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256);
+                    b.Property<string>("NormalizedEmail").HasMaxLength(256);
 
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256);
+                    b.Property<string>("NormalizedUserName").HasMaxLength(256);
 
-                    b.Property<string>("PasswordHash");
+                    b.Property<string>("PasswordHash").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<bool>("PhoneNumberConfirmed");
+                    b.Property<bool>("PhoneNumberConfirmed").HasColumnType("tinyint(1)").HasConversion<int>();
 
-                    b.Property<string>("SecurityStamp");
+                    b.Property<string>("SecurityStamp").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<bool>("TwoFactorEnabled");
+                    b.Property<bool>("TwoFactorEnabled").HasColumnType("tinyint(1)").HasConversion<int>();
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("UserName").HasMaxLength(256).HasColumnType("text")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
@@ -74,17 +72,15 @@ namespace AuthServer.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Id").HasMaxLength(256)
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ConcurrencyStamp")
+                    b.Property<string>("ConcurrencyStamp").HasMaxLength(256).HasColumnType("text")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(256);
+                    b.Property<string>("Name").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256);
+                    b.Property<string>("NormalizedName").HasMaxLength(256);
 
                     b.HasKey("Id");
 
@@ -111,11 +107,11 @@ namespace AuthServer.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClaimType");
+                    b.Property<string>("ClaimType").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<string>("ClaimValue").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("RoleId")
+                    b.Property<string>("RoleId").HasMaxLength(256)
                         .IsRequired();
 
                     b.HasKey("Id");
@@ -131,11 +127,11 @@ namespace AuthServer.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ClaimType");
+                    b.Property<string>("ClaimType").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("ClaimValue");
+                    b.Property<string>("ClaimValue").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserId").HasMaxLength(256)
                         .IsRequired();
 
                     b.HasKey("Id");
@@ -147,13 +143,13 @@ namespace AuthServer.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider").HasMaxLength(256);
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey").HasMaxLength(256);
 
-                    b.Property<string>("ProviderDisplayName");
+                    b.Property<string>("ProviderDisplayName").HasMaxLength(256).HasColumnType("text");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserId").HasMaxLength(256)
                         .IsRequired();
 
                     b.HasKey("LoginProvider", "ProviderKey");
@@ -165,9 +161,9 @@ namespace AuthServer.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId").HasMaxLength(256);
 
-                    b.Property<string>("RoleId");
+                    b.Property<string>("RoleId").HasMaxLength(256);
 
                     b.HasKey("UserId", "RoleId");
 
@@ -178,13 +174,12 @@ namespace AuthServer.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId").HasMaxLength(256);
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider").HasMaxLength(256);
 
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Value");
+                    b.Property<string>("Name").HasMaxLength(256);
+                    b.Property<string>("Value").HasMaxLength(256).HasColumnType("text");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
