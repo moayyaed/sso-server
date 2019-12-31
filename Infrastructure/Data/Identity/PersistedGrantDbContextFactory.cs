@@ -14,8 +14,8 @@ namespace AuthServer.Infrastructure.Data.Identity
         {
             var optionsBuilder = new DbContextOptionsBuilder<PersistedGrantDbContext>();
             var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
-            //optionsBuilder.UseMySQL("Server=.;Database=AuthServer;Trusted_Connection=True;MultipleActiveResultSets=true",
-            optionsBuilder.UseMySQL(config.GetConnectionString("Default"),            
+            //optionsBuilder.UseMySql("Server=.;Database=AuthServer;Trusted_Connection=True;MultipleActiveResultSets=true",
+            optionsBuilder.UseMySql(config.GetConnectionString("Default"),            
                 sql => sql.MigrationsAssembly(typeof(PersistedGrantDbContextFactory).GetTypeInfo().Assembly.GetName().Name));
             return new PersistedGrantDbContext(optionsBuilder.Options, new OperationalStoreOptions());
         }
