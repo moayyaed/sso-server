@@ -45,3 +45,4 @@ SET FOREIGN_KEY_CHECKS = 1;
 ## References
 - https://en.wikipedia.org/wiki/Single_sign-on
 - https://github.com/mmacneil/AngularASPNETCoreOAuth
+- https://github.com/echuck66/ASPNETMVCCoreTest
