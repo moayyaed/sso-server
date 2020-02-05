@@ -1,17 +1,32 @@
 # SSO Identity
 
-## Development Environment
+## Criteria
+Create a Single sign on authentication server, support development many applications with only once sign on.
+
+## Development environment
 - Visual Studio Code
 - IdentityServer4
-- SQL Server
+- MySQL
 
 ## Setup
 
-#### To run the demo:
+#### To run the demo
 
 **1.** Clone/Fork this repository.
 
-**2.** Create the database on your SQL Server by using the dotnet cli to run the migrations from within the command:
+**2.** Create the database on MySQL server by using the dotnet cli to run the migrations from within the command
+
+#### Create EFMigrateHistory table at each database
+```
+CREATE TABLE `__EFMigrationsHistory` ( `MigrationId` nvarchar(150) NOT NULL, 
+`ProductVersion` nvarchar(32) NOT NULL, 
+PRIMARY KEY (`MigrationId`) );
+```
+
+### Migrate database
+
+<pre><code>dotnet ef database update --context AppIdentityDbContext</code></pre>
+<pre><code>dotnet ef database update --context PersistedGrantDbContext</code></pre>
 
 #### Force delete all table if need
 ```
@@ -27,18 +42,6 @@ DEALLOCATE PREPARE stmt;
 SET FOREIGN_KEY_CHECKS = 1; 
 ```
 
-#### Create EFMigrateHistory table at each databases:
-```
-CREATE TABLE `__EFMigrationsHistory` ( `MigrationId` nvarchar(150) NOT NULL, 
-`ProductVersion` nvarchar(32) NOT NULL, 
-PRIMARY KEY (`MigrationId`) );
-```
-
-### Migrate database:
-
-<pre><code>dotnet ef database update --context AppIdentityDbContext</code></pre>
-<pre><code>dotnet ef database update --context PersistedGrantDbContext</code></pre>
-
-
- 
-
+## References
+https://en.wikipedia.org/wiki/Single_sign-on
+https://github.com/mmacneil/AngularASPNETCoreOAuth
