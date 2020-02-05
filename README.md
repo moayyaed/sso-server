@@ -1,7 +1,7 @@
 # SSO Identity
 
 ## Criteria
-Create a Single sign on authentication server, support development many applications with only once sign on.
+Create a Single sign on authentication server, support development many applications with only once sign on
 
 ## Development environment
 - Visual Studio Code
@@ -43,5 +43,5 @@ SET FOREIGN_KEY_CHECKS = 1;
 ```
 
 ## References
-https://en.wikipedia.org/wiki/Single_sign-on
-https://github.com/mmacneil/AngularASPNETCoreOAuth
+- https://en.wikipedia.org/wiki/Single_sign-on
+- https://github.com/mmacneil/AngularASPNETCoreOAuth
